@@ -17,3 +17,5 @@ const answers_no = {
         "NO NO NO NO NO NO NO NO NO NO NO NO N ON NO"
     ],
 };
+const no_button = document.getElementById('no-button');
+const yes_button = document.getElementById('yes-button');
