@@ -1,21 +1,37 @@
-const answers_no = {
-    english: [
-        "No",
-        "please forgive me",
-        "i have no idea what ive done",
-        "please",
-        "if you dont forgive me im gonna cry",
-        "what have i done to make you this much mad:(",
-        "Why are you being so cold?",
-        "Maybe we can talk about it?",
-        "I crying :( :(",
-        "you'er hurting my feelings!",
-        ":( :( :( ",
-        "please dont be mad",
-        "Please give me a chance!",
-        "I am begging you to forgive me!",
-        "NO NO NO NO NO NO NO NO NO NO NO NO N ON NO"
-    ],
-};
+
+
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
+const maxheight = window.innerHeight;
+const maxwidth = window.innerWidth;
+
+
+no_button.addEventListener('mouseover', () => {
+   //change mouse position by hovering over the no button
+    let x = Math.floor(Math.random() * maxwidth);
+    let y = Math.floor(Math.random() * maxheight);
+    no_button.style.top = y + "px";
+    no_button.style.left = x + "px";   
+});
+
+
+yes_button.addEventListener('click', () => {
+    // change banner gif path
+    let banner = document.getElementById('banner');
+    banner.src = "public/images/yes.gif";
+    refreshBanner();
+    // hide buttons div
+    let buttons = document.getElementsByClassName('buttons')[0];
+    buttons.style.display = "none";
+    // show message div
+    let message = document.getElementsByClassName('message')[0];
+    message.style.display = "block";
+});
+
+function refreshBanner() {
+    // Reload banner gif to force load  
+    let banner = document.getElementById('banner');
+    let src = banner.src;
+    banner.src = '';
+    banner.src = src;
+}
