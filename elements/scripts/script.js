@@ -2,8 +2,8 @@
 
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
-const maxheight = window.innerHeight;
-const maxwidth = window.innerWidth;
+const maxheight = window.innerHeight - 40;
+const maxwidth = window.innerWidth - 150;
 
 
 no_button.addEventListener('mouseover', () => {
@@ -18,7 +18,7 @@ no_button.addEventListener('mouseover', () => {
 yes_button.addEventListener('click', () => {
     // change banner gif path
     let banner = document.getElementById('banner');
-    banner.src = "public/images/yes.gif";
+    banner.src = "elements/img/yes.gif";
     refreshBanner();
     // hide buttons div
     let buttons = document.getElementsByClassName('buttons')[0];
